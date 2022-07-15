@@ -11,6 +11,7 @@
     display: flex;
     justify-content: space-between;
     width: 736px;
+    margin-bottom: 1.5rem;
 }
 
 .createdTasks {
@@ -34,20 +35,17 @@
 
 .taskShow {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 736px;
-    padding: 1.5rem;
-    margin-top: 1.5rem;
-    border-radius: 8px;
-    border-top: 1px solid var(--gray-400)
+    flex-direction: column;
 }
 
 .taskEmpty {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    border-radius: 8px;
+    width: 736px;
+    padding: 1.5rem;
+    border-top: 1px solid var(--gray-400)
 }
 
 .clipboard {

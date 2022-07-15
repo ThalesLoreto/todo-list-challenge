@@ -1,8 +1,12 @@
 import { ClipboardText } from 'phosphor-react'
 
+import { Task } from '../Task'
+
 import styles from './styles.module.css'
 
 export function TaskList() {
+  const loop = ['1', '2', '3', '4']
+
   return (
     <main className={styles.wrapper}>
       <header className={styles.taskInfo}>
@@ -15,11 +19,15 @@ export function TaskList() {
       </header>
 
       <div className={styles.taskShow}>
-        <div className={styles.taskEmpty}>
-          <ClipboardText size={56} className={styles.clipboard} />
-          <p className={styles.h1}>Você ainda não tem tarefas cadastradas</p>
-          <p>Crie tarefas e organize seus itens a fazer</p>
-        </div>
+        {true ?
+          loop.map(task => (<Task id={task} key={task}/>))
+          :
+          <div className={styles.taskEmpty}>
+            <ClipboardText size={56} className={styles.clipboard} />
+            <p className={styles.h1}>Você ainda não tem tarefas cadastradas</p>
+            <p >Crie tarefas e organize seus itens a fazer</p>
+          </div>
+        }
       </div>
     </main>
   )
