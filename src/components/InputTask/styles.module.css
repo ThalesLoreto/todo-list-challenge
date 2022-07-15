@@ -1,0 +1,45 @@
+
+.taskInputArea {
+  display: flex;
+  width: 736px;
+  margin-top: calc(0px + 2.5rem + 27px);
+  justify-content: space-between;
+
+}
+
+.taskInputArea > form {
+  width: 100%;
+  overflow: hidden;
+}
+
+.taskInputArea > form > input {
+  width: 100%;
+  background: var(--gray-500);
+  border: 0;
+  height: 3.375rem;
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--gray-300);
+  line-height: 1.4;
+}
+
+.taskInputArea > button[type=submit] {
+  padding: 1rem 1.5rem;
+  border: 0;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  background: var(--blue-700);
+  color: var(--gray-100);
+  margin-left: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.25rem;
+}
+
+.taskInputArea > button[type=submit]:hover {
+  background: var(--blue-100);
+}
