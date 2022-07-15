@@ -4,18 +4,19 @@ import checkImg from '../../assets/mark.svg'
 import styles from './styles.module.css'
 
 interface TaskProps {
-  id: string;
+  uuid: string;
+  content: string;
 }
 
-export function Task({ id }: TaskProps) {
+export function Task({ uuid, content }: TaskProps) {
   return (
     <div className={styles.task}>
       <div className={styles.taskInfo}>
-        <input type='checkbox' id={id} />
-        <label className={styles.taskCompletedButton} htmlFor={id}>
+        <input type='checkbox' id={uuid} />
+        <label className={styles.taskCompletedButton} htmlFor={uuid}>
           <img src={checkImg} alt='Check Icon' />
         </label>
-        <p>2 pacotes de macarrão</p>
+      <p>{content}</p>
       </div>
       <button type='submit' className={styles.deleteButton}>
         <Trash size={18} />

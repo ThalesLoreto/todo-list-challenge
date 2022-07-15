@@ -2,12 +2,13 @@
 .taskInputArea {
   display: flex;
   width: 736px;
-  margin-top: calc(0px + 2.5rem + 27px);
+  margin-top: calc(0px - 6rem - 27px);
   justify-content: space-between;
 
 }
 
 .taskInputArea > form {
+  display: flex;
   width: 100%;
   overflow: hidden;
 }
@@ -23,7 +24,7 @@
   line-height: 1.4;
 }
 
-.taskInputArea > button[type=submit] {
+.taskInputArea > form > button[type=submit] {
   padding: 1rem 1.5rem;
   border: 0;
   border-radius: 8px;
@@ -40,6 +41,6 @@
   gap: 0.25rem;
 }
 
-.taskInputArea > button[type=submit]:hover {
+.taskInputArea > form > button[type=submit]:hover {
   background: var(--blue-100);
 }

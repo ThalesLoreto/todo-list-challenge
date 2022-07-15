@@ -9,7 +9,6 @@ export function Header() {
     <header className={styles.header}>
       <aside className={styles.side}>
         <img src={todoLogo} alt='Logo' />
-        <InputTask />
       </aside>
     </header>
   )
