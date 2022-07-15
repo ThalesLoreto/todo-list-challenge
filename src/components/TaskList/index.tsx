@@ -23,6 +23,13 @@ export function TaskList() {
     setTasks(newTaskList)
   }
 
+  function deleteComment(uuid: string) {
+    const newTaskList = tasks.filter(task => {
+      return task.uuid !== uuid
+    })
+    setTasks(newTaskList)
+  }
+
   return (
     <main className={styles.wrapper}>
       <InputTask addNewTask={addNewTask} />
@@ -44,7 +51,12 @@ export function TaskList() {
           </div>
           :
           tasks.map(task => (
-            <Task key={task.uuid} uuid={task.uuid} content={task.content} />
+            <Task
+              key={task.uuid}
+              uuid={task.uuid}
+              content={task.content}
+              deleteComment={deleteComment}
+            />
           ))
         }
       </div>
