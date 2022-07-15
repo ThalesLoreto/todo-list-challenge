@@ -1,5 +1,5 @@
-import styles from './Header.module.css'
-import todoLogo from '../assets/todo_logo.svg'
+import styles from './styles.module.css'
+import todoLogo from '../../assets/todo_logo.svg'
 import { PlusCircle } from 'phosphor-react'
 
 export function Header() {
