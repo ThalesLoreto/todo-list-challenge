@@ -1,0 +1,66 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5.875rem 0;
+}
+
+.taskInfo {
+    display: flex;
+    justify-content: space-between;
+    width: 736px;
+}
+
+.createdTasks {
+    color: var(--blue-100);
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.doneTasks {
+    color: var(--purple-700);
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.badge {
+    padding: 0 0.475rem;
+    border-radius: 8px;
+    background: var(--gray-400);
+    color: var(--gray-200);
+}
+
+.taskShow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 736px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    border-top: 1px solid var(--gray-400)
+}
+
+.taskEmpty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clipboard {
+    color: var(--gray-400);
+    margin: 4rem 0 1rem;
+}
+
+.taskEmpty p {
+    color: var(--gray-300);
+    font-size: 1.4;
+    line-height: 1.6;
+}
+
+.h1 {
+    font-weight: bold;
+}
