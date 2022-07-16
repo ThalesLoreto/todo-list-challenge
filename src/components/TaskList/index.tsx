@@ -15,6 +15,12 @@ interface Task {
 export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([])
 
+  const currentTasksDone = tasks.filter(task => {
+      if (task.isCompleted === true) return task
+  })
+
+  const currentTotalTasks = tasks.length
+
   function addNewTask(newTaskContent: string) {
     const newTask: Task = {
       uuid: uuid(),
@@ -45,10 +51,17 @@ export function TaskList() {
       <InputTask addNewTask={addNewTask} />
       <header className={styles.taskInfo}>
         <div className={styles.createdTasks}>
-          Tarefas Criadas <span className={styles.badge}>{tasks.length}</span>
+          Tarefas Criadas <span className={styles.badge}>{currentTotalTasks}</span>
         </div>
         <div className={styles.doneTasks}>
-          Concluídas <span className={styles.badge}>0</span>
+          Concluídas
+          <span className={styles.badge}>
+            {currentTasksDone.length === 0 ?
+              <span>0</span>
+              :
+              <span>{currentTasksDone.length} de {currentTotalTasks}</span>
+            }
+          </span>
         </div>
       </header>
 
