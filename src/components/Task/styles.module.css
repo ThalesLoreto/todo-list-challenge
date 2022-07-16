@@ -24,6 +24,18 @@
     display: none;
 }
 
+.content {
+    color: var(--gray-100);
+    font-size: 0.875rem;
+    font-weight: 1.4;
+}
+.contentDone {
+    text-decoration: line-through;
+    color: var(--gray-300);
+    font-size: 0.875rem;
+    font-weight: 1.4;
+}
+
 .taskCompletedButton {
     display: flex;
     justify-content: center;

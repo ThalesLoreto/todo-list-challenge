@@ -9,6 +9,7 @@ import styles from './styles.module.css'
 interface Task {
   uuid: string;
   content: string;
+  isCompleted: boolean;
 }
 
 export function TaskList() {
@@ -17,7 +18,8 @@ export function TaskList() {
   function addNewTask(newTaskContent: string) {
     const newTask: Task = {
       uuid: uuid(),
-      content: newTaskContent
+      content: newTaskContent,
+      isCompleted: false
     }
     const newTaskList = [...tasks, newTask]
     setTasks(newTaskList)
@@ -26,6 +28,14 @@ export function TaskList() {
   function deleteComment(uuid: string) {
     const newTaskList = tasks.filter(task => {
       return task.uuid !== uuid
+    })
+    setTasks(newTaskList)
+  }
+
+  function onCheckTask(uuid: string, isCompleted: boolean) {
+    const newTaskList = tasks.map(task => {
+      if (task.uuid === uuid) task.isCompleted = isCompleted
+      return task
     })
     setTasks(newTaskList)
   }
@@ -55,6 +65,8 @@ export function TaskList() {
               key={task.uuid}
               uuid={task.uuid}
               content={task.content}
+              isCompleted={task.isCompleted}
+              onCheckTask={onCheckTask}
               deleteComment={deleteComment}
             />
           ))
