@@ -21,6 +21,8 @@ export function InputTask({ addNewTask }: InputTaskProps) {
     setText(newText)
   }
 
+  const isNewTaskEmpty = text.length === 0
+
   return (
     <div className={styles.taskInputArea}>
       <form onSubmit={handleSubmitForm}>
@@ -30,7 +32,7 @@ export function InputTask({ addNewTask }: InputTaskProps) {
           onChange={handleTextInput}
           value={text}
         />
-        <button type='submit'>
+        <button type='submit' disabled={isNewTaskEmpty}>
           Criar <PlusCircle size={16} />
         </button>
       </form>

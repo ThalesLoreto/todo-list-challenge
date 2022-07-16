@@ -1,4 +1,3 @@
-
 .taskInputArea {
   display: flex;
   width: 736px;
@@ -10,7 +9,6 @@
 .taskInputArea > form {
   display: flex;
   width: 100%;
-  overflow: hidden;
 }
 
 .taskInputArea > form > input {
@@ -22,6 +20,10 @@
   border-radius: 8px;
   color: var(--gray-300);
   line-height: 1.4;
+}
+
+.taskInputArea:focus-within > form > input {
+  color: var(--gray-100);
 }
 
 .taskInputArea > form > button[type=submit] {
@@ -43,4 +45,9 @@
 
 .taskInputArea > form > button[type=submit]:hover {
   background: var(--blue-100);
+}
+
+.taskInputArea > form > button[type=submit]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
